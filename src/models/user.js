@@ -60,6 +60,16 @@ const userSchema = new mongoose.Schema(
 			type: String,
 			default: "It is a default about",
 		},
+		photoUrl: {
+			type: String,
+			default:
+				"https://static.vecteezy.com/system/resources/thumbnails/003/337/584/small/default-avatar-photo-placeholder-profile-icon-vector.jpg",
+			validate(value) {
+				if (!validator.isURL(value)) {
+					throw new Error("Invalid Photo URL: " + value);
+				}
+			},
+		},
 	},
 	{ timestamps: true }
 );
