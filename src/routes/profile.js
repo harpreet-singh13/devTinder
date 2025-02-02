@@ -8,7 +8,7 @@ const {
 	validateProfileForgotPasswordData,
 } = require("../utils/validate");
 
-profileRouter.get("/profile", userAuth, async (req, res) => {
+profileRouter.get("/profile/view", userAuth, async (req, res) => {
 	try {
 		const user = req.user;
 		res.send(user);
