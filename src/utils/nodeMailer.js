@@ -35,8 +35,8 @@ const transporter = nodemailer.createTransport({
   port: 465, // SSL port
   secure: true, // Use SSL
   auth: {
-    user: "AKIARSYRSGSGHYQPODHU", // SES SMTP username
-    pass: "BKfYSrZz7e4u5JVRP2rZftnVqhPEg21ei2CI2BHT6sQ+", // SES SMTP password
+    user: process.env.SMTP_USERNAME // SES SMTP username
+    pass: process.env.SMTP_PASSWORD , // SES SMTP password
   },
 });
 
