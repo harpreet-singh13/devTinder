@@ -147,4 +147,8 @@ authRouter.post("/resetPassword/:token", async (req, res) => {
   }
 });
 
+authRouter.get("/ping", (req, res) => {
+  res.send("Server is alive ✅");
+});
+
 module.exports = authRouter;
